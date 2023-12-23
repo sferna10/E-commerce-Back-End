@@ -9,12 +9,14 @@ try {
   const allcategories =  await Category.findAll({
     include: [Product],
   })
-  res.status(200).json(allcategories)
-}catch (err) {
+  res.status(200).json(allcategories)}
+  catch (err) {
 
   console.error(err)
   res.status(500).json(err)
-}  // find all categories
+}
+
+// find all categories
     
   
   }),
@@ -25,7 +27,7 @@ try {
       },
       include: [Product],
     })
-      then((category) => res.json(category))
+      .then((category) => res.json(category))
       .catch((err) => res.status(400).json(err));
   });
 
@@ -48,10 +50,10 @@ try {
     router.delete('/:id', (req, res) => {
       Category.destroy({
         where: {
-          id: req.params.id,
+          id:req.params.id
         },
       })
-      .then((category) => res.status(200).json(category))
+      .then((category) => res.status(200).json(product))
       .catch(( err) => res.status(400).json(err));
 });
 
