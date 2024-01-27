@@ -11,12 +11,12 @@ router.get('/', (req, res) => {
       },
     ],
   })
-  ,then((tags)  => res.status(200).json(tags))
+  .then((tags)  => res.status(200).json(tags))
   .catch((err) => res.status(500).json(err));
 });
 
 
-  router.get('/:Id', (req, res) => {
+  router.get('/:id', (req, res) => {
     Tag.findOne({
       where: {
         id: req.params.id,
