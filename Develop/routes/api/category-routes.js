@@ -21,7 +21,7 @@ try {
   
   }),
   router.get('/:id', (req, res) => {
-    Category, findOne({
+    Category.findOne({
       where: {
         id: req.params.id,
       },
